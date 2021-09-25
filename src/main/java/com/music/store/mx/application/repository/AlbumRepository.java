@@ -8,10 +8,11 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: AlbumRepository.java
 * Autor: johanama
-* Fecha de creación: 18 sep 2021
+* Fecha de creación: 18 sep. 2021
 */
+
 package com.music.store.mx.application.repository;
 
 import java.util.List;
@@ -24,10 +25,23 @@ import com.music.store.mx.model.Album;
 import com.music.store.mx.model.Song;
 
 
+/**
+ * The Interface AlbumRepository.
+ */
 public interface AlbumRepository extends JpaRepository<Album, Long> {
 
+  /**
+   * Find all.
+   *
+   * @return the list
+   */
   List<Album> findAll();
 
+  /**
+   * Update album.
+   *
+   * @param label the label
+   */
   @Transactional
   @Modifying
   @Query(value = "UPDATE Album set disquera = ?", nativeQuery = true)

@@ -8,18 +8,23 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: ErrorResponse.java
 * Autor: johanama
-* Fecha de creación: 20 sep 2021
+* Fecha de creación: 24 sep. 2021
 */
+
 
 package com.music.store.mx.infraestructure.exceptions;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * The Class ErrorResponse.
+ */
 @AllArgsConstructor
 public class ErrorResponse {
 
+  /** The code. */
   private Integer code;
 
   /** The message. */

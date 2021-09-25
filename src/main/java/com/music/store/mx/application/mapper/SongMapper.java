@@ -8,21 +8,34 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: SongMapper.java
 * Autor: johanama
-* Fecha de creación: 18 sep 2021
+* Fecha de creación: 18 sep. 2021
 */
+
 package com.music.store.mx.application.mapper;
 
 import com.music.store.mx.application.dto.SongDto;
 import com.music.store.mx.model.Song;
 
+/**
+ * The Class SongMapper.
+ */
 public class SongMapper {
 
+  /**
+   * Instantiates a new song mapper.
+   */
   private SongMapper() {
     super();
   }
 
+  /**
+   * To model.
+   *
+   * @param songDto the song dto
+   * @return the song
+   */
   public static Song toModel(SongDto songDto) {
 
     Song song = new Song();
@@ -35,6 +48,12 @@ public class SongMapper {
 
   }
 
+  /**
+   * To dto.
+   *
+   * @param song the song
+   * @return the song dto
+   */
   public static SongDto toDto(Song song) {
 
     return SongDto.builder().songId(song.getSongId()).title(song.getTitle())

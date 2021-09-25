@@ -8,16 +8,26 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: MusicStoreInputException.java
 * Autor: johanama
-* Fecha de creación: 19 sep 2021
+* Fecha de creación: 19 sep. 2021
 */
+
 package com.music.store.mx.application.controller;
 
+/**
+ * The Class MusicStoreInputException.
+ */
 public class MusicStoreInputException extends RuntimeException {
 
+  /** The Constant serialVersionUID. */
   private static final long serialVersionUID = -193512243192091891L;
   
+  /**
+   * Instantiates a new music store input exception.
+   *
+   * @param message the message
+   */
   public MusicStoreInputException(String message) {
     super(message);
   }

@@ -8,9 +8,9 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: ApplicationStarter.java
 * Autor: johanama
-* Fecha de creación: 18 sep 2021
+* Fecha de creación: 24 sep. 2021
 */
 
 package com.music.store.mx;
@@ -18,9 +18,17 @@ package com.music.store.mx;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * The Class ApplicationStarter.
+ */
 @SpringBootApplication
 public class ApplicationStarter {
 
+  /**
+   * The main method.
+   *
+   * @param args the arguments
+   */
   public static void main(String[] args) {
     SpringApplication.run(ApplicationStarter.class, args);
   }

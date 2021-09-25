@@ -8,9 +8,9 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: MusicStoreService.java
 * Autor: johanama
-* Fecha de creación: 18 sep 2021
+* Fecha de creación: 18 sep. 2021
 */
 
 package com.music.store.mx.application.service;
@@ -23,12 +23,20 @@ import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
+/**
+ * The Interface MusicStoreService.
+ */
 public interface MusicStoreService {
 
+  /**
+   * Retrieve albums.
+   *
+   * @return the list
+   */
   List<AlbumDto> retrieveAlbums();
 
   /**
-   * Find album by id.
+   * Retrieve album by id.
    *
    * @param albumId the album id
    * @return the album dto
@@ -55,8 +63,9 @@ public interface MusicStoreService {
    * @param albumDto the album dto
    */
   public void updateAlbum(AlbumDto albumDto);
+  
   /**
-   * Retrive songs.
+   * Retrieve songs.
    *
    * @return the list
    */
@@ -70,6 +79,11 @@ public interface MusicStoreService {
    */
   List<SongDto> retriveSongs(Long albumId);
 
+  /**
+   * Creates the song.
+   *
+   * @param songDto the song dto
+   */
   public void createSong(SongDto songDto);
 
   /**
@@ -85,6 +99,7 @@ public interface MusicStoreService {
    * @param songId the song id
    */
   public void deleteSong(Long songId);
+  
   /**
    * Update albums.
    *
@@ -101,16 +116,16 @@ public interface MusicStoreService {
   public void deleteSongs(Long albumId);
 
   /**
-   * Gets the song by id and album id.
+   * Gets the song by id album id.
    *
    * @param songId the song id
    * @param albumId the album id
-   * @return the song by id and album id
+   * @return the song by id album id
    */
   Optional<SongDto> getSongByIdAlbumId(Long songId, Long albumId);
 
   /**
-   * Delete song id.
+   * Delete song.
    *
    * @param songId the song id
    * @param albumId the album id

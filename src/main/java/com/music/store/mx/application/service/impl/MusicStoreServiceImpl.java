@@ -8,9 +8,9 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: MusicStoreServiceImpl.java
 * Autor: johanama
-* Fecha de creación: 18 sep 2021
+* Fecha de creación: 18 sep. 2021
 */
 
 package com.music.store.mx.application.service.impl;
@@ -30,12 +30,24 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 
+/**
+ * The Class MusicStoreServiceImpl.
+ */
 @Service
 public class MusicStoreServiceImpl implements MusicStoreService {
 
+  /** The album repository. */
   private AlbumRepository albumRepository;
+  
+  /** The songs repository. */
   private SongsRepository songsRepository;
 
+  /**
+   * Instantiates a new music store service impl.
+   *
+   * @param albumRepository the album repository
+   * @param songsRepository the songs repository
+   */
   public MusicStoreServiceImpl(AlbumRepository albumRepository, SongsRepository songsRepository) {
 
     this.albumRepository = albumRepository;
@@ -54,7 +66,7 @@ public class MusicStoreServiceImpl implements MusicStoreService {
   }
 
   /**
-   * Retrive songs.
+   * Retrieve songs.
    *
    * @return the list
    */
@@ -180,7 +192,7 @@ public class MusicStoreServiceImpl implements MusicStoreService {
   }
 
   /**
-   * Find album by id.
+   * Retrieve album by id.
    *
    * @param albumId the album id
    * @return the album dto
@@ -215,11 +227,11 @@ public class MusicStoreServiceImpl implements MusicStoreService {
   }
 
   /**
-   * Gets the song by id and album id.
+   * Gets the song by id album id.
    *
    * @param songId the song id
    * @param albumId the album id
-   * @return the song by id and album id
+   * @return the song by id album id
    */
   @Override
   public Optional<SongDto> getSongByIdAlbumId(Long songId, Long albumId) {
@@ -243,7 +255,7 @@ public class MusicStoreServiceImpl implements MusicStoreService {
   }
 
   /**
-   * Delete song id.
+   * Delete song.
    *
    * @param songId the song id
    * @param albumId the album id

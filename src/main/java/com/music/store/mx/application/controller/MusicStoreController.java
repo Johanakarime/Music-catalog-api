@@ -8,10 +8,11 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: MusicStoreController.java
 * Autor: johanama
-* Fecha de creación: 18 sep 2021
+* Fecha de creación: 18 sep. 2021
 */
+
 package com.music.store.mx.application.controller;
 
 import com.music.store.mx.application.dto.AlbumDto;
@@ -30,15 +31,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
+/**
+ * The Class MusicStoreController.
+ */
 @RestController
 public class MusicStoreController {
 
+  /** The music store service. */
   private MusicStoreService musicStoreService;
 
+  /**
+   * Instantiates a new music store controller.
+   *
+   * @param musicStoreService the music store service
+   */
   public MusicStoreController(MusicStoreService musicStoreService) {
     this.musicStoreService = musicStoreService;
   }
 
+  /**
+   * Gets the albums.
+   *
+   * @return the albums
+   */
   // Get Albums
   @GetMapping(value = "/api/v1/albums", produces = "application/json")
   public ResponseEntity<List<AlbumDto>> getAlbums() {
@@ -46,6 +61,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Creates the album.
    *
    * @param album the album
    * @return the response entity
@@ -72,6 +88,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Delete album.
    *
    * @param albumId the album id
    * @return the response entity
@@ -84,6 +101,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Gets the album by id.
    *
    * @param albumId the album id
    * @return the album by id
@@ -95,6 +113,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Update albums.
    *
    * @param albumDto the album dto
    * @return the response entity
@@ -110,6 +129,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Delete albums.
    *
    * @return the response entity
    */
@@ -123,6 +143,7 @@ public class MusicStoreController {
   // **********************************************************************************************
 
   /**
+   * Gets the songs.
    *
    * @return the songs
    */
@@ -133,6 +154,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Gets the songs.
    *
    * @param albumId the album id
    * @return the songs
@@ -144,6 +166,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Creates the song.
    *
    * @param songDto the song dto
    * @return the response entity
@@ -156,6 +179,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Update song.
    *
    * @param songDto the song dto
    * @return the response entity
@@ -169,6 +193,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Delete song.
    *
    * @param songId the song id
    * @return the response entity
@@ -181,6 +206,7 @@ public class MusicStoreController {
   }
 
   /**
+   * Gets the song by id.
    *
    * @param albumId the album id
    * @param songId the song id
@@ -197,6 +223,7 @@ public class MusicStoreController {
 
 
   /**
+   * Delete song.
    *
    * @param albumId the album id
    * @param songId the song id

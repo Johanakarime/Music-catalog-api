@@ -8,9 +8,9 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: ApplicationController.java
+* Nombre de archivo: GlobalExceptionHandler.java
 * Autor: johanama
-* Fecha de creación: 20 sep 2021
+* Fecha de creación: 24 sep. 2021
 */
 
 package com.music.store.mx.infraestructure.exceptions;
@@ -20,8 +20,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import com.music.store.mx.application.controller.MusicStoreInputException;
 
+/**
+ * The Class GlobalExceptionHandler.
+ */
 public class GlobalExceptionHandler {
 
+  /**
+   * Bad request.
+   *
+   * @param musicStoreInputException the music store input exception
+   * @return the response entity
+   */
   @ExceptionHandler({MusicStoreInputException.class})
 
   public ResponseEntity<ErrorResponse> badRequest(
@@ -31,6 +40,12 @@ public class GlobalExceptionHandler {
         HttpStatus.BAD_REQUEST);
   }
 
+  /**
+   * Internal server exception.
+   *
+   * @param serverException the server exception
+   * @return the response entity
+   */
   @ExceptionHandler({Exception.class})
   public ResponseEntity<ErrorResponse> internalServerException(Exception serverException) {
     return new ResponseEntity<>(
